@@ -23,6 +23,8 @@ contract RandomWinnerGame is VRFConsumerBase, Ownable {
     // current game id
     uint256 public gameId;
 
+    uint104 public chickeName;
+
     // emitted when the game starts
     event GameStarted(uint256 gameId, uint8 maxPlayers, uint256 entryFee);
     // emitted when someone joins a game
@@ -43,6 +45,7 @@ contract RandomWinnerGame is VRFConsumerBase, Ownable {
         keyHash = vrfKeyHash;
         fee = vrfFee;
         gameStarted = false;
+        gameId = 4;
     }
 
     /**
